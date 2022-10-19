@@ -37,12 +37,15 @@ public class Response {
       if (file.exists()) {
         fis = new FileInputStream(file);
         int ch = fis.read(bytes, 0, BUFFER_SIZE);
+        String header = "HTTP/1.1 200 OK\r\n" +
+                "Content-Type: text/html\r\n" +
+                "\r\n";
+        output.write(header.getBytes());
+
         while (ch!=-1) {
-          System.out.print(bytes.toString());
           output.write(bytes, 0, ch);
           ch = fis.read(bytes, 0, BUFFER_SIZE);
         }
-        System.out.println(output.toString());
         System.out.println("send ok");
       }
       else {
