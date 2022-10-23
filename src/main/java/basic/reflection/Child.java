@@ -26,7 +26,6 @@ public class Child extends Parent {
     public void method4_1(){
         System.out.println("method4_1");
     }
-
     public void method4_2(int n1, int n2, String str1){
         System.out.println("method4_2");
     }
