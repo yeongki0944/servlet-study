@@ -14,7 +14,7 @@ public class Test {
         Child child = new Child();
         Class Tclass = Class.forName("basic.reflection.Child");
         Method method = Tclass.getDeclaredMethod("method5", int.class);
-//        method.setAccessible(true);
+        method.setAccessible(true);
         method.invoke(child, 10);
         /*
             Error 발생

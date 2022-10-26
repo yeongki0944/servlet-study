@@ -7,6 +7,13 @@ public class Test {
 
          */
 
+        Class Tclass = null;
+        try {
+            Tclass = Class.forName("basic.reflection.Child");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Class name by forName : " + Tclass.getName());
 
     }
 }
